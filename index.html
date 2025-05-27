@@ -23,6 +23,7 @@
 
   <h2>Search Quiz Questions</h2>
   <input type="text" id="searchInput" placeholder="Type a keyword..." oninput="searchQuestions()">
+  <button onclick="clearSearch()">Clear</button>button>
 
   <div id="results"></div>
 
@@ -169,7 +170,11 @@
   { question: "What is the damage multiplier for Martyrs' Watch Rocket Launchers when they attack fortifications?", answer: "350%" }
 ]
 
-
+    function clearSearch() {
+      document.getElementById("searchInput").value = "";
+      document.getElementById("results").innerHTML = "";
+    }
+	  
     function searchQuestions() {
       const keyword = document.getElementById("searchInput").value.toLowerCase();
       const resultsDiv = document.getElementById("results");
